@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Board SQL -->
+<mapper namespace="global.sesoc.test6.mapper.ReplyMapper"> 
+
+	<insert id="insert" parameterType="Reply">
+		<!-- <selectKey databaseId="replynum" order="BEFORE" resultType="int">
+			SELECT reply6_seq.nextval FROM dual
+		</selectKey> -->
+		
+		insert into reply6(replynum, boardnum, id, text, inputDate) 
+		
+		values (reply6_seq.nextval, #{boardnum}, #{id}, #{text}, sysdate)
+	</insert>
+	
+	<select id="rList" resultType="Reply">
+		select *
+		from reply6
+		where boardnum = #{boardnum}
+	</select>
+	
+	<update id="update" parameterType="Reply">
+		update reply6
+		set text = #{text}
+		where replynum = #{replynum}
+	
+	</update>
+	
+	<delete id="delete">
+		delete from reply6
+		where replynum = #{replynum}
+		
+	</delete>
+
+
+</mapper>

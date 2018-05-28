@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="global.sesoc.test6.mapper.BulletinMapper">
+	<insert id="insert" parameterType="Bulletin">
+		insert into bulletin6 (
+		bulletinnum, id, title, content, inputdate, hits)
+		values (bulletin6_seq.nextval, #{id}, #{title}, #{content}, sysdate, 0)
+	</insert>
+	
+	<select id="bulletinList" resultType="Bulletin">
+		select bulletinnum, id, title, content, to_char(inputdate, 'MM-DD, HH24:mm') as inputdate, hits
+		from bulletin6
+	</select>
+	
+	<select id="readOne" resultType="Bulletin">
+		select *
+		from bulletin6
+		where bulletinnum = #{bulletinnum}
+	</select>
+
+</mapper>

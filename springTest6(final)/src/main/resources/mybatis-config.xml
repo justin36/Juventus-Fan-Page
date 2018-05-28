@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="global.sesoc.test6.vo.Member" alias="Member"/>
+		<typeAlias type="global.sesoc.test6.vo.Board" alias="Board"/>
+		<typeAlias type="global.sesoc.test6.vo.Bulletin" alias="Bulletin"/>
+		<typeAlias type="global.sesoc.test6.vo.Reply" alias="Reply"/>		
+
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="memberMapper.xml" />
+		<mapper resource="boardMapper.xml" />
+		<mapper resource="bulletinMapper.xml" />
+		<mapper resource="replyMapper.xml" />
+	</mappers>
+	
+</configuration>
+
+
